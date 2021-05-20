@@ -33,7 +33,7 @@ function Lev1({ match }) {
         <span className="inline-content">
           <h2 className="display-2">Level 1</h2>
           <a href="/#word-list">
-            <button className="btn btn-success">Change Level</button>
+            <button className="btn btn-warning">Change Level</button>
           </a>
         </span>
         <br />
@@ -43,7 +43,9 @@ function Lev1({ match }) {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Word</th>
-              <th scope="col">Overview</th>
+              <th scope="col" className="sub">
+                Overview
+              </th>
               <th scope="col">Go to definition</th>
             </tr>
           </thead>
@@ -52,9 +54,9 @@ function Lev1({ match }) {
               <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{word.word}</td>
-                <td>{word.sub}</td>
+                <td className="sub">{word.sub}</td>
                 <td>
-                  <Link className="btn btn-primary" to={`/word/${word.word}`}>
+                  <Link className="btn btn-success" to={`/word/${word.word}`}>
                     View
                   </Link>
                 </td>

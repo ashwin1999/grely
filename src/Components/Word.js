@@ -36,13 +36,19 @@ const Word = ({ match }) => {
           <br />
           <br />
           <i>
-            <p className="lead">{def.short}</p>
+            <p className="lead word-def">{def.short}</p>
           </i>
           <br />
-          <p className="lead">{def.long}</p>
+          <p className="lead word-def">{def.long}</p>
+          <br />
+          <br />
           <Link to={`/${def.level.replace(" ", "")}`}>
-            <button className="btn btn-success">Back to List</button>
+            <button className="btn btn-dark">Back to List</button>
           </Link>
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     );

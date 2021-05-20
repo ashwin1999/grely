@@ -6,7 +6,6 @@ const Home = () => {
     <div>
       <div className="centered">
         <svg
-          width="600"
           height="491"
           viewBox="0 0 600 491"
           fill="none"
