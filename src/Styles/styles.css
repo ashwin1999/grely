@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+td{
+    color: #212529;
+    padding: 0px 0px
+}
+
+a{
+    text-decoration: none;
+}
+
+.muted{
+    color: gray;
+    font-size: 52px;
+}
+
+.inline-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.centered{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.list{
+    height: 100vh;
+}
+
