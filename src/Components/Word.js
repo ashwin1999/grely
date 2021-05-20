@@ -18,7 +18,7 @@ const Word = ({ match }) => {
       }, 500);
     };
     getDefinition(match.params.word);
-  }, []);
+  }, [match.params.word]);
 
   if (loading) {
     return (

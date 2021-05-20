@@ -1,5 +1,4 @@
 import React from "react";
-import exam from "../Images/exam.svg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
