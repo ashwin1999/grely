@@ -1,7 +1,7 @@
 {
-  "name": "Membean",
-  "short_name": "Membean clone",
-  "description": "GRE vocabulary made easy",
+  "name": "GREly",
+  "short_name": "GREly",
+  "description": "GRE Vocabulary Made Easy",
   "icons": [{
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",

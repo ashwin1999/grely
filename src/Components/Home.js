@@ -272,7 +272,7 @@ const Home = () => {
         </svg>
 
         <div className="text">
-          <h3 className="display-3">Membean Clone</h3>
+          <h3 className="display-3">GREly</h3>
           <p className="lead">Incredibly effective vocabulary learning.</p>
           <a href="#word-list">
             <button className="btn btn-light">Go to word list</button>
