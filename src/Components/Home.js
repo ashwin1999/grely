@@ -282,7 +282,7 @@ const Home = () => {
 
       {/* to display */}
       <div id="word-list" className="list">
-        <h2 className="display-2">Membean Word List</h2>
+        <h2 className="display-2">Word List</h2>
         <br />
         <br />
         <table class="table">
