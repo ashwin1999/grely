@@ -1,25 +1,41 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 
-function Lev1({ match }) {
-  // eslint-disable-next-line
+function Lev3({ match }) {
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line
+  const [level, setLevel] = useState(3);
+  const [closed, setClosed] = useState([]);
 
   useEffect(() => {
     const getWords = async () => {
       const def = await axios.get(
-        `https://membean-clone.herokuapp.com/level/3`
+        `https://membean-clone.herokuapp.com/level/${level}`
       );
-      // console.log(def.data.words);
+
       setWords(def.data.words);
+
+      let temp = [];
+      for (let i = 0; i < def.data.length; i++) {
+        temp.push(true);
+      }
+      setClosed(temp);
+
       setTimeout(() => {
         setLoading(false);
       }, 100);
     };
     getWords();
-  }, []);
+  }, [level]);
+
+  const changeVisibility = (e) => {
+    let ind = e.target.id;
+    let newArr = [...closed];
+    newArr[ind] = !newArr[ind];
+    setClosed(newArr);
+  };
 
   if (loading) {
     return (
@@ -31,14 +47,14 @@ function Lev1({ match }) {
     return (
       <div className="container-sm">
         <span className="inline-content">
-          <h2 className="display-2">Level 3</h2>
+          <h2 className="display-2">Level {level}</h2>
           <a href="/#word-list">
             <button className="btn btn-warning">Change Level</button>
           </a>
         </span>
         <br />
         <br />
-        <table class="table table-hover">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -50,22 +66,44 @@ function Lev1({ match }) {
             </tr>
           </thead>
           <tbody>
+            <br />
             {words.map((word, index) => (
-              <tr>
-                <th scope="row">{index + 1}</th>
-                <td>{word.word}</td>
-                <td className="sub">{word.sub}</td>
-                <td>
-                  <Link className="btn btn-success" to={`/word/${word.word}`}>
-                    View
-                  </Link>
-                </td>
-              </tr>
+              <React.Fragment key={word.word}>
+                <tr id={word.word}>
+                  <th scope="row">{index + 1}</th>
+                  <td>{word.word}</td>
+                  <td className="sub">{word.sub}</td>
+                  <td>
+                    <button
+                      onClick={(e) => changeVisibility(e)}
+                      className={
+                        closed[index] ? "btn btn-success" : "btn btn-dark big"
+                      }
+                      id={index}
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  id={`def-${index}`}
+                  className={closed[index] ? "hide" : "show"}
+                >
+                  <td colspan="4">
+                    <div className="container-fluid">
+                      <i>
+                        <p className="lead word-def">{word.short}</p>
+                      </i>
+                      <br />
+                      <p className="lead word-def">{word.long}</p>
+                    </div>
+                  </td>
+                </tr>
+                <br />
+              </React.Fragment>
             ))}
           </tbody>
         </table>
-        <br />
-        <br />
         <br />
         <br />
       </div>
@@ -73,4 +111,4 @@ function Lev1({ match }) {
   }
 }
 
-export default Lev1;
+export default Lev3;

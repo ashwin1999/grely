@@ -47,8 +47,20 @@ svg{
     width: 125px;
 }
 
+.big{
+    width: 125px;
+}
+
 .btn-primary{
     width: 70px;
+}
+
+.show{
+    overflow: hidden;
+}
+
+.hide{
+    display: none;
 }
 
 @media screen and (max-width: 425px) {

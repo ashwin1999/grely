@@ -4,7 +4,7 @@ import Lev2 from "./Components/Lev2";
 import Lev3 from "./Components/Lev3";
 import Lev4 from "./Components/Lev4";
 import Lev5 from "./Components/Lev5";
-import Word from "./Components/Word";
+// import Word from "./Components/Word";
 import Home from "./Components/Home";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Route path="/level3" component={Lev3} />
       <Route path="/level4" component={Lev4} />
       <Route path="/level5" component={Lev5} />
-      <Route path="/word/:word" component={Word} />
+      {/* <Route path="/word/:word" component={Word} /> */}
     </Switch>
   );
 }
