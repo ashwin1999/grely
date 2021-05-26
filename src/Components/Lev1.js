@@ -32,9 +32,19 @@ function Lev1({ match }) {
 
   const changeVisibility = (e) => {
     let ind = e.target.id;
-    let newArr = [...closed];
-    newArr[ind] = !newArr[ind];
-    setClosed(newArr);
+
+    let temp = [];
+    for (let i = 0; i < closed.length; i++) {
+      temp.push(true);
+    }
+
+    if (closed[ind]) {
+      temp[ind] = false;
+      setClosed(temp);
+    } else {
+      temp[ind] = true;
+      setClosed(temp);
+    }
   };
 
   if (loading) {
