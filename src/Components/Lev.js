@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import axios from "axios";
+import Loader from "./Loader";
 
-function Lev5({ match }) {
+function Lev({ match }) {
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line
-  const [level, setLevel] = useState(5);
+  const [level, setLevel] = useState(match.params.id);
   const [closed, setClosed] = useState([]);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function Lev5({ match }) {
   if (loading) {
     return (
       <div className="container">
-        <h2 className="display-2">Loading Word List...</h2>
+        <Loader />
       </div>
     );
   } else {
@@ -64,7 +64,7 @@ function Lev5({ match }) {
         </span>
         <br />
         <br />
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -121,4 +121,4 @@ function Lev5({ match }) {
   }
 }
 
-export default Lev5;
+export default Lev;
