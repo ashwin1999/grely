@@ -99,7 +99,7 @@ function Lev({ match }) {
                   id={`def-${index}`}
                   className={closed[index] ? "hide" : "show"}
                 >
-                  <td colspan="4">
+                  <td colSpan="4">
                     <div className="container-fluid">
                       <i>
                         <p className="lead word-def">{word.short}</p>

@@ -1,9 +1,35 @@
 import React from "react";
+import "../Styles/loader.css";
 
 const Loader = () => {
   return (
-    <div className="yinyan-container">
-      <div className="yinyan"></div>
+    <div className="loader-container">
+      <div class="boxes">
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 };
