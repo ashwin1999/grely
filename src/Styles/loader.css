@@ -83,22 +83,22 @@
 .boxes .box>div:nth-child(1) {
     top: 0;
     left: 0;
-    background: #5C8DF6;
+    background: #48991c;
 }
 
 .boxes .box>div:nth-child(2) {
-    background: #145af2;
+    background: #52ad28;
     right: 0;
     --rotateY: 90deg;
 }
 
 .boxes .box>div:nth-child(3) {
-    background: #447cf5;
+    background: #005825;
     --rotateX: -90deg;
 }
 
 .boxes .box>div:nth-child(4) {
-    background: #DBE3F4;
+    background: #092402;
     top: 0;
     left: 0;
     --translateZ: -90px;

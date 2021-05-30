@@ -286,6 +286,9 @@ const Home = () => {
           <a href="#word-list">
             <button className="btn btn-light">Go to word list</button>
           </a>
+          <Link to="/dictionary">
+            <button className="btn btn-info">Dictionary</button>
+          </Link>
         </div>
       </div>
 
