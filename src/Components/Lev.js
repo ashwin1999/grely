@@ -31,7 +31,8 @@ function Lev({ match }) {
   }, [level]);
 
   const changeVisibility = (e) => {
-    let ind = e.target.id;
+    let ind = e.target.parentElement.id;
+    console.log(`tr pressed: ${ind}`);
 
     let temp = [];
     for (let i = 0; i < closed.length; i++) {
@@ -72,18 +73,23 @@ function Lev({ match }) {
               <th scope="col" className="sub">
                 Overview
               </th>
-              <th scope="col">Go to definition</th>
+              {/* <th scope="col">Go to definition</th> */}
             </tr>
           </thead>
           <tbody>
-            <br />
             {words.map((word, index) => (
               <React.Fragment key={word.word}>
-                <tr id={word.word}>
+                <tr
+                  id={index}
+                  onClick={(e) => changeVisibility(e)}
+                  className={
+                    closed[index] ? "table-row" : "table-row clicked-word"
+                  }
+                >
                   <th scope="row">{index + 1}</th>
                   <td>{word.word}</td>
                   <td className="sub">{word.sub}</td>
-                  <td>
+                  {/* <td>
                     <button
                       onClick={(e) => changeVisibility(e)}
                       className={
@@ -93,7 +99,7 @@ function Lev({ match }) {
                     >
                       View
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
                 <tr
                   id={`def-${index}`}
@@ -104,12 +110,10 @@ function Lev({ match }) {
                       <i>
                         <p className="lead word-def">{word.short}</p>
                       </i>
-                      <br />
                       <p className="lead word-def">{word.long}</p>
                     </div>
                   </td>
                 </tr>
-                <br />
               </React.Fragment>
             ))}
           </tbody>

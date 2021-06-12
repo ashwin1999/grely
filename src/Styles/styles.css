@@ -113,6 +113,27 @@ svg {
     margin: 50px 50px
 }
 
+.table-row {
+    cursor: pointer;
+}
+
+.clicked-word {
+    background-color: gray;
+}
+
+th,
+td {
+    padding: 10px
+}
+
+.clicked-word td {
+    color: white;
+}
+
+.clicked-word th {
+    color: white;
+}
+
 @media screen and (max-width: 425px) {
     .centered {
         display: flex;
