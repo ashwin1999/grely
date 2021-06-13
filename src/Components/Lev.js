@@ -4,7 +4,7 @@ import data from "./data";
 
 function Lev({ match }) {
   const [words, setWords] = useState([]);
-  const [loading, setLoading] = useState(false); // should be true by default
+  const [loading, setLoading] = useState(true); // should be true by default
   // eslint-disable-next-line
   const [level, setLevel] = useState(match.params.id);
   const [closed, setClosed] = useState([]);
