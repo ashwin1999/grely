@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Loader from "./Loader";
+import data from "./data";
 
 function Lev({ match }) {
   const [words, setWords] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // should be true by default
   // eslint-disable-next-line
   const [level, setLevel] = useState(match.params.id);
   const [closed, setClosed] = useState([]);
 
   useEffect(() => {
-    const getWords = async () => {
-      const def = await axios.get(
-        `https://membean-clone.herokuapp.com/level/${level}`
-      );
-
-      setWords(def.data.words);
-
-      let temp = [];
-      for (let i = 0; i < def.data.length; i++) {
+    let temp = [];
+    // eslint-disable-next-line
+    let words = data().filter((item) => {
+      if (item.level === level) {
+        return item;
+      }
+    });
+    if (words.length > 0) {
+      setWords(words);
+      for (let i = 0; i < words.length; i++) {
         temp.push(true);
       }
       setClosed(temp);
-
       setTimeout(() => {
         setLoading(false);
       }, 100);
-    };
-    getWords();
+    }
   }, [level]);
 
   const changeVisibility = (e) => {
@@ -89,17 +88,6 @@ function Lev({ match }) {
                   <th scope="row">{index + 1}</th>
                   <td>{word.word}</td>
                   <td className="sub">{word.sub}</td>
-                  {/* <td>
-                    <button
-                      onClick={(e) => changeVisibility(e)}
-                      className={
-                        closed[index] ? "btn btn-success" : "btn btn-dark big"
-                      }
-                      id={index}
-                    >
-                      View
-                    </button>
-                  </td> */}
                 </tr>
                 <tr
                   id={`def-${index}`}

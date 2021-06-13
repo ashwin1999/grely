@@ -1,10 +1,17 @@
 import React from "react";
-import Loader from "./Loader";
+// import Loader from "./Loader";
+import endpoints from "./endpoints";
 
 const Test = () => {
   return (
     <div>
-      <Loader />
+      <button
+        onClick={() => {
+          console.log(endpoints());
+        }}
+      >
+        YO YO YO!
+      </button>
     </div>
   );
 };

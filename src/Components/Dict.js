@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import data from "./data";
 
 const Dict = () => {
   const [word, setWord] = useState("");
@@ -13,23 +13,22 @@ const Dict = () => {
   };
 
   useEffect(() => {
-    const getMeaning = async (word) => {
-      if (word !== "") {
-        const def = await axios.get(
-          `https://membean-clone.herokuapp.com/word/${word}`
-        );
-        const syn = def.data;
-        if (syn.message !== undefined) {
-          setValid(false);
-          setDef({});
-        } else {
-          setValid(true);
-          setDef(syn.word);
+    // eslint-disable-next-line
+    let final = data().filter((item) => {
+      if (word.length > 0) {
+        if (item.word.startsWith(word)) {
+          return item;
         }
       }
-    };
-
-    getMeaning(word);
+    });
+    console.log(final);
+    if (final.length > 0) {
+      setDef(final[0]);
+      setValid(true);
+    } else {
+      setDef({});
+      setValid(false);
+    }
   }, [word]);
 
   return (
