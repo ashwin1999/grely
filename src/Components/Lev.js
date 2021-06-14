@@ -86,7 +86,11 @@ function Lev({ match }) {
                   }
                 >
                   <th scope="row">{index + 1}</th>
-                  <td>{word.word}</td>
+                  <td>
+                    <a href={`#${index}`} class="black">
+                      {word.word}
+                    </a>
+                  </td>
                   <td className="sub">{word.sub}</td>
                 </tr>
                 <tr
