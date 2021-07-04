@@ -103,6 +103,23 @@ function Lev({ match }) {
                         <p className="lead word-def">{word.short}</p>
                       </i>
                       <p className="lead word-def">{word.long}</p>
+                      <span>
+                        <a
+                          href={`https://www.dictionary.com/browse/${word.word}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          More Info
+                        </a>{" "}
+                        or{" "}
+                        <a
+                          href={`https://sentence.yourdictionary.com/${word.word}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Examples Sentence
+                        </a>
+                      </span>
                     </div>
                   </td>
                 </tr>
