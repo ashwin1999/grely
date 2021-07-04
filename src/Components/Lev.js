@@ -108,16 +108,17 @@ function Lev({ match }) {
                           href={`https://www.dictionary.com/browse/${word.word}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="btn btn-success"
                         >
                           More Info
                         </a>{" "}
-                        or{" "}
                         <a
                           href={`https://sentence.yourdictionary.com/${word.word}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="btn btn-secondary"
                         >
-                          Examples Sentence
+                          Examples Sentences
                         </a>
                       </span>
                     </div>
