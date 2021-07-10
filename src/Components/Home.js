@@ -322,6 +322,13 @@ const Home = () => {
             ))}
           </tbody>
         </table>
+        <p className="lead">
+          Feeling Confident? Check out the word gym to strengthen your
+          vocabulary!{" "}
+          <Link className="gymlink btn lead" to="/gym">
+            Go now
+          </Link>
+        </p>
       </div>
     </div>
   );

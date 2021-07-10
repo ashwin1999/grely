@@ -31,7 +31,6 @@ function Lev({ match }) {
 
   const changeVisibility = (e) => {
     let ind = e.target.parentElement.id;
-    console.log(`tr pressed: ${ind}`);
 
     let temp = [];
     for (let i = 0; i < closed.length; i++) {

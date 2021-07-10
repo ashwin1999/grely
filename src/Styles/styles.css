@@ -46,6 +46,19 @@ svg {
     width: 600;
 }
 
+.red {
+    color: red;
+}
+
+.ansBtn.btn {
+    width: 200px;
+}
+
+.gymlink.btn {
+    color: black;
+    text-decoration: none;
+}
+
 .centered {
     display: flex;
     flex-direction: row;

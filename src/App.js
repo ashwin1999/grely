@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Lev from "./Components/Lev";
 import Dict from "./Components/Dict";
-// import Test from "./Components/Test";
+import WordGym from "./Components/WordGym";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Route path="/" component={Home} exact />
       <Route path="/level/:id" component={Lev} />
       <Route path="/dictionary" component={Dict} />
-      {/* <Route path="/test" component={Test} /> */}
+      <Route path="/gym" component={WordGym} />
     </Switch>
   );
 }
