@@ -112,12 +112,20 @@ function Lev({ match }) {
                           More Info
                         </a>{" "}
                         <a
+                          href={`https://https://thesaurus.yourdictionary.com/${word.word}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-warning"
+                        >
+                          Synonyms
+                        </a>
+                        <a
                           href={`https://sentence.yourdictionary.com/${word.word}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn btn-secondary"
+                          className="btn btn-danger"
                         >
-                          Examples Sentences
+                          Sentence Usage
                         </a>
                       </span>
                     </div>
